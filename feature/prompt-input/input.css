@@ -1,0 +1,166 @@
+/* =============================================
+   PromptCraft — Feature 5: Prompt Input
+   input.css
+   ============================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #000;
+  border-bottom: 1px solid #1f2937;
+}
+
+.navbar-left {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.navbar-center,
+.navbar-right {
+  color: #2dd4bf;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ── BOARD / LAYOUT ── */
+.board {
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+/* ── PANEL ── */
+.panel {
+  background: #0d0d0d;
+  border: 1px solid #1e3a3a;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.panel-title {
+  color: #2dd4bf;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* ── TEXTAREA ── */
+.prompt-textarea {
+  width: 100%;
+  min-height: 100px;
+  background: #0a0a0a;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  padding: 14px;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prompt-textarea::placeholder { color: #6b7280; }
+
+.prompt-textarea:focus {
+  border-color: #2dd4bf;
+  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.15);
+}
+
+/* State feedback */
+.prompt-textarea.state-success {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+}
+.prompt-textarea.state-fail {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+}
+.prompt-textarea.shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+
+/* ── CHAR COUNTER ── */
+.char-counter {
+  text-align: right;
+  font-size: 0.72rem;
+  color: #6b7280;
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
+/* ── ACTION ROW ── */
+.action-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 11px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s ease, transform 0.1s ease, background 0.2s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: #1d4ed8;
+  color: #fff;
+}
+.btn-primary:hover { background: #1e40af; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #2dd4bf;
+  color: #2dd4bf;
+}
+.btn-outline:hover { background: rgba(45, 212, 191, 0.08); }
+.btn-outline:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── FEEDBACK MESSAGE ── */
+.feedback-msg {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  text-align: center;
+  min-height: 1.2rem;
+  line-height: 1.5;
+}
+.feedback-msg.success { color: #22c55e; }
+.feedback-msg.fail    { color: #ef4444; }
+.feedback-msg.info    { color: #facc15; }
+
+@media (max-width: 480px) {
+  .navbar { padding: 14px 18px; flex-wrap: wrap; gap: 8px; }
+  .panel { padding: 18px; }
+}

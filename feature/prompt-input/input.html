@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PromptCraft — Prompt Input</title>
+  <link rel="stylesheet" href="input.css"/>
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-left">⚡ PROMPTCRAFT</div>
+    <div class="navbar-center">Level <span id="level-num">1</span></div>
+    <div class="navbar-right">Score: <span id="score-val">0</span></div>
+  </header>
+
+  <!-- MAIN PANEL (Prompt Input feature only) -->
+  <main class="board">
+
+    <section class="panel input-panel">
+      <h2 class="panel-title">Type your prompt:</h2>
+
+      <textarea
+        id="promptInput"
+        class="prompt-textarea"
+        placeholder="Describe what created this image... Be specific about style, mood, colors, and objects."
+        maxlength="500"
+      ></textarea>
+
+      <div class="char-counter"><span id="charCount">0</span> / 500 characters</div>
+
+      <div class="action-row">
+        <button class="btn btn-primary" id="submitBtn">Submit Guess</button>
+        <button class="btn btn-outline" id="hintBtn">Get Hint</button>
+      </div>
+
+      <div class="feedback-msg" id="feedbackMsg"></div>
+    </section>
+
+  </main>
+
+  <script src="input.js"></script>
+</body>
+</html>
