@@ -1,0 +1,225 @@
+/* =============================================
+   PromptCraft — Feature 4: Timer System
+   timer.css
+   ============================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #000;
+  border-bottom: 1px solid #1f2937;
+}
+
+.navbar-left {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.navbar-center {
+  color: #2dd4bf;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.navbar-right {
+  color: #2dd4bf;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ── BOARD / LAYOUT ── */
+.board {
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+/* ── PANEL ── */
+.panel {
+  background: #0d0d0d;
+  border: 1px solid #1e3a3a;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.panel-title {
+  color: #2dd4bf;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ── TIMER DISPLAY ── */
+.timer-display-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.timer-number {
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #2dd4bf;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.timer-number.warn {
+  color: #facc15;
+}
+
+.timer-number.danger {
+  color: #ef4444;
+  animation: shake-text 0.4s ease infinite;
+}
+
+.timer-unit {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+}
+
+@keyframes shake-text {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-2px); }
+  75%      { transform: translateX(2px); }
+}
+
+/* ── CONTROLS ── */
+.timer-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.btn {
+  flex: 1;
+  padding: 11px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: #1d4ed8;
+  color: #fff;
+}
+.btn-primary:hover { background: #1e40af; }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #2dd4bf;
+  color: #2dd4bf;
+}
+.btn-outline:hover { background: rgba(45, 212, 191, 0.08); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #374151;
+  color: #9ca3af;
+}
+.btn-ghost:hover { color: #fff; border-color: #6b7280; }
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── STATUS TEXT ── */
+.timer-status {
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+.timer-status.running { color: #2dd4bf; }
+.timer-status.warn    { color: #facc15; }
+.timer-status.danger  { color: #ef4444; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 50;
+}
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-card {
+  background: #0d0d0d;
+  border: 1px solid #ef4444;
+  border-radius: 10px;
+  padding: 32px 28px;
+  width: 90%;
+  max-width: 340px;
+  text-align: center;
+}
+
+.modal-title {
+  color: #ef4444;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.modal-sub {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.modal-prompt {
+  color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.07);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 14px 18px; flex-wrap: wrap; gap: 8px; }
+  .timer-number { font-size: 3.4rem; }
+}
