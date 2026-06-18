@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptCraft AI - Game</title>
+
+    <link rel="stylesheet" href="../css/page/game.css">
+    <link rel="stylesheet" href="../css/page/hint.css">
+</head>
+<body>
+
+    <div class="game-container">
+
+        <h1>PromptCraft AI</h1>
+
+        <img
+            id="level-image"
+            src="../assets/images/levels/easy/cat-space.jpg"
+            alt="Game Image"
+            width="400"
+        >
+
+        <br><br>
+
+        <input
+            type="text"
+            id="prompt-input"
+            placeholder="Enter your prompt guess..."
+        >
+
+        <button id="submit-btn">
+            Submit
+        </button>
+
+        <hr>
+
+        <div class="hint-section">
+
+            <h3>Hints</h3>
+
+            <div id="hint-box">
+                Click "Get Hint" to reveal a clue.
+            </div>
+
+            <button id="hint-btn">
+                Get Hint
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="../js/hint-engine.js"></script>
+
+    <script>
+
+        const levelData = {
+            prompt: "neon cyberpunk cat on giant donut in space",
+
+            hints: [
+                "Theme is futuristic",
+                "Background is outside Earth",
+                "A cat is the main subject"
+            ]
+        };
+
+        const hintBtn = document.getElementById("hint-btn");
+        const hintBox = document.getElementById("hint-box");
+
+        hintBtn.addEventListener("click", () => {
+
+            const hint = hintEngine.getHint(levelData);
+
+            hintBox.innerText = hint;
+
+        });
+
+    </script>
+
+</body>
+</html>

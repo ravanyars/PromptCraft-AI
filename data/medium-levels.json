@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "image": "flying-car.jpg",
+
+        "prompt": "flying car above futuristic city",
+
+        "hints": [
+            "Transportation is involved",
+            "The vehicle is not on the road",
+            "The city is futuristic"
+        ]
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "image": "dragon-galaxy.jpg",
+
+        "prompt": "cyberpunk astronaut riding dragon through galaxy",
+
+        "hints": [
+            "A human is travelling",
+            "A fantasy creature is involved",
+            "The scene is in outer space"
+        ]
+    }
+]

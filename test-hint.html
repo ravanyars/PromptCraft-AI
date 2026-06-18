@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hint System Test</title>
+    <link rel="stylesheet" href="css/page/hint.css">
+</head>
+<body>
+
+    <h1>Hint System Testing</h1>
+
+    <div id="hint-box">
+        Click button to get hint
+    </div>
+
+    <br>
+
+    <button id="hint-btn">
+        Get Hint
+    </button>
+
+    <script src="js/hint-engine.js"></script>
+
+    <script>
+
+        const levelData = {
+            hints: [
+                "Theme is futuristic",
+                "Background is outside Earth",
+                "A cat is present"
+            ]
+        };
+
+        const hintBtn = document.getElementById("hint-btn");
+        const hintBox = document.getElementById("hint-box");
+
+        hintBtn.addEventListener("click", () => {
+            hintBox.innerText = hintEngine.getHint(levelData);
+        });
+
+    </script>
+
+</body>
+</html>

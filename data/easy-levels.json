@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "image": "cat-space.jpg",
+
+        "prompt": "neon cyberpunk cat on giant donut in space",
+
+        "hints": [
+            "Theme is futuristic",
+            "Background is outside Earth",
+            "A cat is present"
+        ]
+    },
+
+    {
+        "id": 2,
+        "image": "robot-dog.jpg",
+
+        "prompt": "robot dog in future city",
+
+        "hints": [
+            "Not a real animal",
+            "Technology is involved",
+            "It lives in a city"
+        ]
+    }
+]
