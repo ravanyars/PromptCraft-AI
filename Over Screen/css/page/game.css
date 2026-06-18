@@ -1,0 +1,320 @@
+
+/* GAME PAGE STYLES */
+
+.game-header {
+    background-color: var(--light-bg);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-left, .header-center, .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-logo {
+    font-size: 20px;
+}
+
+.header-info {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Game Area */
+.game-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 30px;
+    min-height: calc(100vh - 200px);
+}
+
+.game-section {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+}
+
+.game-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Image Section */
+.image-display {
+    width: 100%;
+    height: 300px;
+    background-color: var(--dark-bg);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.difficulty-label {
+    text-align: center;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Input Section */
+.timer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.timer-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.input-area {
+    margin-bottom: 30px;
+}
+
+.input-area label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+#promptInput {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-top: 5px;
+}
+
+.game-buttons {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+/* Hint Box */
+.hint-box {
+    background-color: var(--dark-bg);
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.hint-box h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.hint-box p {
+    color: var(--text-gray);
+    margin-bottom: 15px;
+}
+
+/* Stats Section */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.stat-item span:first-child {
+    color: var(--text-gray);
+}
+
+.stat-value {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.tips-box {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.tips-box h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.tips-box ul {
+    list-style: none;
+    color: var(--text-gray);
+}
+
+.tips-box li {
+    padding: 5px 0;
+}
+
+.tips-box li:before {
+    content: "✓ ";
+    color: var(--success-color);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* MODALS (Popups) */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal h2 {
+    color: var(--accent-color);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.modal-score {
+    font-size: 56px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.result-keywords {
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.result-keywords h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.keyword-box {
+    color: var(--text-gray);
+    word-wrap: break-word;
+}
+
+.result-original {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.result-original h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.result-original p {
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+.complete-stars {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.points-text {
+    font-size: 24px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.complete-info {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.complete-info p {
+    margin: 10px 0;
+    color: var(--text-gray);
+}
+
+.timeup-text {
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+.original-answer,
+.your-answer {
+    background-color: var(--dark-bg);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.final-score {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-buttons .btn {
+    flex: 1;
+}

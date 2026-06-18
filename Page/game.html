@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game - PROMPTCRAFT AI</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/game.css">
+</head>
+<body>
+    <!-- Game Header -->
+    <div class="game-header">
+        <div class="header-left">
+            <h1 class="game-logo">⚡ PROMPTCRAFT</h1>
+        </div>
+        <div class="header-center">
+            <span class="header-info">Level <span id="currentLevel">1</span></span>
+        </div>
+        <div class="header-right">
+            <span class="header-info">Score: <span id="gameScore">0</span></span>
+        </div>
+    </div>
+
+    <!-- Main Game Area -->
+    <div class="game-area">
+        <!-- Left Side - Image -->
+        <div class="game-section image-section">
+            <h3>AI Generated Image</h3>
+            <div class="image-display" id="imageDisplay">
+                <img src="https://via.placeholder.com/300?text=AI+Generated+Image" alt="AI Image">
+            </div>
+            <p class="difficulty-label" id="difficultyLabel">Medium Difficulty</p>
+        </div>
+
+        <!-- Center - Game Input -->
+        <div class="game-section input-section">
+            <!-- Timer -->
+            <div class="timer">
+                <div class="timer-display" id="timerDisplay">60</div>
+                <p>seconds</p>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <label for="promptInput">Type your prompt:</label>
+                <textarea 
+                    id="promptInput" 
+                    placeholder="Describe what created this image... Be specific about style, mood, colors, and objects."
+                    rows="5"
+                ></textarea>
+                <p class="char-count"><span id="charCount">0</span> / 500 characters</p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="game-buttons">
+                <button class="btn btn-primary" onclick="submitGuess()">Submit Guess</button>
+                <button class="btn btn-secondary" onclick="getHint()">Get Hint</button>
+            </div>
+
+            <!-- Hint Display -->
+            <div id="hintBox" class="hint-box" style="display: none;">
+                <h4>💡 Hint:</h4>
+                <p id="hintText"></p>
+                <button class="btn-small" onclick="closeHint()">Close</button>
+            </div>
+        </div>
+
+        <!-- Right Side - Stats -->
+        <div class="game-section stats-section">
+            <h3>Game Stats</h3>
+            <div class="stat-item">
+                <span>Current Score:</span>
+                <span id="roundScore" class="stat-value">0%</span>
+            </div>
+            <div class="stat-item">
+                <span>Best Score:</span>
+                <span id="bestScore" class="stat-value">--</span>
+            </div>
+            <div class="stat-item">
+                <span>Attempts:</span>
+                <span id="attempts" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span>Hints Left:</span>
+                <span id="hintsLeft" class="stat-value">2</span>
+            </div>
+
+            <div class="tips-box">
+                <h4>📌 Tips:</h4>
+                <ul>
+                    <li>Be descriptive</li>
+                    <li>Include colors</li>
+                    <li>Mention style</li>
+                    <li>Use keywords</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Your Score</h2>
+            <div class="modal-score" id="modalScore">87%</div>
+            
+            <div class="result-keywords">
+                <h4>✓ Correct Words:</h4>
+                <div class="keyword-box" id="correctKeywords">
+                    cyberpunk, neon, cat, space
+                </div>
+            </div>
+
+            <div class="result-keywords">
+                <h4>✗ Missing Words:</h4>
+                <div class="keyword-box" id="missingKeywords">
+                    glowing, futuristic
+                </div>
+            </div>
+
+            <div class="result-original">
+                <h4>Original Prompt:</h4>
+                <p id="originalPrompt">Cyberpunk glowing neon cat in space</p>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="tryAgain()">Try Again</button>
+                <button class="btn btn-primary" id="nextLevelBtn" onclick="nextLevel()" style="display: none;">Next Level</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level Complete Modal -->
+    <div id="completeModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>🎉 Level Cleared!</h2>
+            <div class="complete-stars">⭐ ⭐ ⭐</div>
+            <p class="points-text">+250 Points!</p>
+            
+            <div class="complete-info">
+                <p><strong>Score:</strong> <span id="completeScore">92%</span></p>
+                <p><strong>Time:</strong> <span id="completeTime">35s</span></p>
+                <p><strong>Attempts:</strong> <span id="completeAttempts">2</span></p>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="goToHome()">Home</button>
+                <button class="btn btn-primary" onclick="nextLevel()">Next Level</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Up Modal -->
+    <div id="timeUpModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>⏱ Time's Up!</h2>
+            <p class="timeup-text">Original Prompt:</p>
+            <p id="timeUpPrompt" class="original-answer">Cyberpunk neon cat on giant donut in space</p>
+            
+            <p class="timeup-text">Your Best Guess:</p>
+            <p id="timeUpGuess" class="your-answer">Neon cat on donut</p>
+            <p class="final-score">Score: <span id="timeUpScore">45%</span></p>
+
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="goToHome()">Home</button>
+                <button class="btn btn-primary" onclick="tryAgain()">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/game/game-controller.js"></script>
+</body>
+</html>
