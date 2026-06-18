@@ -1,0 +1,647 @@
+/* PROMPTCRAFT AI - BEGINNER FRIENDLY CSS */
+
+
+/* Basic Colors */
+:root {
+    --primary-color: #0066FF;
+    --secondary-color: #FF0099;
+    --dark-bg: #0D0D0D;
+    --light-bg: #1A1A1A;
+    --text-light: #FFFFFF;
+    --text-gray: #BBBBBB;
+    --accent-color: #00FFFF;
+    --success-color: #00CC66;
+    --warning-color: #FF9900;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    background-color: var(--light-bg);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 3px solid var(--primary-color);
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/* BUTTONS */
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0052CC;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+.btn-large {
+    padding: 15px 50px;
+    font-size: 18px;
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* SECTIONS */
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.features,
+.stats,
+.cta,
+.tutorial,
+.difficulty,
+.scoring-guide,
+.example,
+.tips {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+}
+
+/* FEATURE CARDS */
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--secondary-color);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.card p {
+    color: var(--text-gray);
+}
+
+/* STATS SECTION */
+
+.stat-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-box {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border-top: 3px solid var(--primary-color);
+}
+
+.stat-box h4 {
+    font-size: 32px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    color: var(--text-gray);
+}
+
+/* CTA SECTION*/
+
+.cta {
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--secondary-color);
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--text-gray);
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--light-bg);
+    text-align: center;
+    padding: 30px;
+    border-top: 3px solid var(--primary-color);
+    color: var(--text-gray);
+    margin-top: 60px;
+}
+
+/* HOW TO PLAY PAGE */
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.page-header h2 {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: var(--text-gray);
+}
+
+/* Steps */
+.steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    gap: 30px;
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.step-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    min-width: 50px;
+    text-align: center;
+}
+
+.step-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    color: var(--text-gray);
+}
+
+/* Difficulty Cards */
+.difficulty-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.difficulty-card {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.difficulty-card.easy {
+    border-top: 4px solid var(--success-color);
+}
+
+.difficulty-card.medium {
+    border-top: 4px solid var(--warning-color);
+}
+
+.difficulty-card.hard {
+    border-top: 4px solid var(--secondary-color);
+}
+
+.difficulty-card h3 {
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.difficulty-card p {
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+/* Scoring Guide */
+.scoring-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.score-info {
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.score-info h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.score-info p {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* Example Section */
+.example-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.example-box {
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+}
+
+.example-box h4 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.placeholder {
+    background-color: var(--dark-bg);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--text-gray);
+}
+
+.placeholder-text {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+.result-display {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.score-percent {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.keywords-correct,
+.keywords-missing {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Tips */
+.tips-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tips-list li {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-gray);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Action Buttons */
+.action-buttons {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+/*  RESPONSIVE DESIGN (Mobile) */
+
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 40px auto 0;
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-tagline {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Sections */
+    .features,
+    .stats,
+    .cta,
+    .tutorial,
+    .difficulty,
+    .scoring-guide,
+    .example,
+    .tips {
+        margin: 40px auto;
+        padding: 30px 15px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* Feature Cards */
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Game Area */
+    .game-area {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .game-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    /* Game Header */
+    .game-header {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .header-center {
+        grid-column: 1 / -1;
+    }
+
+    /* Page Header */
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    /* Steps */
+    .step {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Difficulty Cards */
+    .difficulty-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Example Section */
+    .example-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tips */
+    .tips-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Modals */
+    .modal-content {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    .modal-score {
+        font-size: 40px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navigation */
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    /* Hero */
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-tagline {
+        font-size: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .btn-large {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    /* Sections */
+    .features,
+    .stats,
+    .cta,
+    .tutorial,
+    .difficulty,
+    .scoring-guide,
+    .example,
+    .tips {
+        padding: 20px 10px;
+        margin: 30px auto;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    /* Game Area */
+    .game-area {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .image-display {
+        height: 200px;
+    }
+
+    .timer-display {
+        font-size: 36px;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-score {
+        font-size: 32px;
+    }
+
+    .complete-stars {
+        font-size: 36px;
+    }
+}
