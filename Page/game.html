@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Game - PROMPTCRAFT AI</title>
-    <link rel="stylesheet" href="Over Screen/css/main.css">
-    <link rel="stylesheet" href="Over Screen/css/page/game.css">
+    <link rel="stylesheet" href="../Over Screen/css/main.css">
+    <link rel="stylesheet" href="../Over Screen/css/page/game.css">
 </head>
 <body>
     <!-- Game Header -->
@@ -166,7 +166,25 @@
             </div>
         </div>
     </div>
+      <!-- Action Buttons -->
+    <section class="action-buttons">
+        <button class="btn btn-secondary" onclick="window.location.href='../index.html'">← Back Home</button>
+        <button class="btn btn-primary" onclick="window.location.href='../Game Screen/how-to-play.html'">How to Play →</button>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 PROMPTCRAFT AI. All rights reserved.</p>
+    </footer>
 
-    <script src="JS/game/game-controller.js"></script>
+    <script src="../Over Screen/js/app.js"></script>
+    <script>
+        function goToHome() {
+         window.location.href = "../index.html";
+        }
+
+        function goToHowToPlay() {
+        window.location.href = "../Game Screen/how-to-play.html";
+        }
+    </script>
 </body>
 </html>

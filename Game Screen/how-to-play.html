@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Play - PROMPTCRAFT AI</title>
-    <link rel="stylesheet" href="Over Screen/css/main.css">
-    <link rel="stylesheet" href="Over Screen/css/styles/home.css">
+    <link rel="stylesheet" href="../Over Screen/css/main.css">
+    <link rel="stylesheet" href="../Over Screen/css/styles/home.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -13,9 +13,9 @@
         <div class="nav-container">
             <h1 class="logo">⚡ PROMPTCRAFT AI</h1>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="how-to-play.html">How to Play</a></li>
-                <li><a href="game.html">Play Game</a></li>
+                <li><a href="../Page/game.html">Play Game</a></li>
             </ul>
         </div>
     </nav>
@@ -151,13 +151,15 @@
         <div class="example-content">
             <div class="example-box">
                 <h4>AI Generated Image</h4>
-                <div class="placeholder">🖼️ Image Display</div>
+                <div class="placeholder">
+                    <img src = "../images/catpic.jpeg" alt="maga" width="250" height="150">
+                </div>
             </div>
 
             <div class="example-box">
                 <h4>Your Guess</h4>
                 <div class="placeholder-text">
-                    "Cyberpunk neon cat wearing sunglasses on a giant donut in space"
+                    " Cyberpunk neon cat wearing sunglasses on a giant donut in space"
                 </div>
             </div>
 
@@ -190,15 +192,25 @@
 
     <!-- Action Buttons -->
     <section class="action-buttons">
-        <button class="btn btn-secondary" onclick="goToHome()">← Back Home</button>
-        <button class="btn btn-primary" onclick="goToGame()">Play Now →</button>
+        <button class="btn btn-secondary" onclick="window.location.href='../index.html'">← Back Home</button>
+        <button class="btn btn-primary" onclick="window.location.href='../Page/game.html'">Play Now →</button>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 PROMPTCRAFT AI. All rights reserved.</p>
     </footer>
 
-    <script src="JS/app.js"></script>
+    <script src="../Over Screen/js/app.js"></script>
+    <script>
+            function goToHome() {
+            window.location.href = "../index.html";
+           }
+
+            function goToGame() {
+             window.location.href = "../Page/game.html";
+            }
+</script>
 </body>
 </html>

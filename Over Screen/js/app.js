@@ -9,27 +9,27 @@
 
 // Go to Home Page
 function goToHome() {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
 
 // Go to How To Play Page
 function goToHowToPlay() {
-    window.location.href = "how-to-play.html";
+    window.location.href = "../Game Screen/how-to-play.html";
 }
 
 // Go to Game Page
 function goToGame() {
-    window.location.href = "game.html";
+    window.location.href = "../Page/game.html";
 }
 
 // Go to Leaderboard Page
 function goToLeaderboard() {
-    window.location.href = "leaderboard.html";
+    window.location.href = "../leaderboard.html";
 }
 
 // Go to Game Over Page
 function goToGameOver() {
-    window.location.href = "game-over.html";
+    window.location.href = "../game-over.html";
 }
 
 // ==========================================
@@ -68,7 +68,6 @@ function hideLoading() {
 // ==========================================
 
 function buttonClickEffect(button) {
-
     button.style.transform = "scale(0.95)";
 
     setTimeout(() => {
@@ -81,10 +80,8 @@ function buttonClickEffect(button) {
 // ==========================================
 
 function initializePage() {
-
     console.log("PROMPTCRAFT AI Loaded Successfully");
 
-    // Current Year in Footer
     const yearElement = document.getElementById("currentYear");
 
     if (yearElement) {
