@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromptCraft AI — Game Over</title>
+  <link rel="stylesheet" href="./game.css" />
+</head>
+<body class="gameover-page">
+
+  <nav class="go-navbar">
+    <div class="go-logo"><span class="bolt">⚡</span> PROMPTCRAFT</div>
+    <div class="go-status-pill">Game Over</div>
+  </nav>
+
+  <main class="go-stage">
+    <div class="go-card">
+
+      <div class="go-eyebrow">🎯 Run Complete</div>
+      <h1 class="go-title">Game Over</h1>
+      <p class="go-subtitle">Here's how your prompt-crafting skills held up</p>
+
+      <div class="go-stats">
+        <div class="go-stat-box">
+          <div class="go-stat-label">Levels Cleared</div>
+          <!-- Filled live by game-over.js — never hardcoded -->
+          <div class="go-stat-value" id="go-levels-cleared">—</div>
+        </div>
+        <div class="go-stat-box">
+          <div class="go-stat-label">Best Score</div>
+          <div class="go-stat-value go-score" id="go-best-score">—</div>
+        </div>
+        <div class="go-stat-box">
+          <div class="go-stat-label">Rank</div>
+          <div class="go-stat-value go-rank" id="go-rank">—</div>
+        </div>
+      </div>
+
+      <p class="go-message" id="go-message"></p>
+      <p class="go-save-status" id="go-save-status"></p>
+
+      <div class="go-actions">
+        <button class="go-btn go-btn-play-again" id="go-play-again-btn">🔄 Play Again</button>
+        <button class="go-btn go-btn-home" id="go-home-btn">🏠 Home</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./leaderboard-storage.js"></script>
+  <script src="./game-over.js"></script>
+</body>
+</html>

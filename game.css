@@ -1,0 +1,223 @@
+/* =========================================================================
+   game.css (Game Over screen)
+   Matches the dark neon theme used across PromptCraft AI.
+   Tokens:
+     bg:        #0a0e14 (near-black)
+     panel:     #0d1623
+     border:    #2bd4c8 (cyan)
+     accent-1:  #2bd4c8 (cyan / teal)
+     accent-2:  #ff4d8d (pink)
+     text:      #e8edf2
+     text-dim:  #8b97a8
+   ========================================================================= */
+
+:root {
+  --go-bg: #0a0e14;
+  --go-panel: #0d1623;
+  --go-border: #2bd4c8;
+  --go-cyan: #2bd4c8;
+  --go-pink: #ff4d8d;
+  --go-blue: #4fb3ff;
+  --go-green: #34e0a1;
+  --go-text: #eef2f6;
+  --go-text-dim: #8b97a8;
+}
+
+.gameover-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 700px 500px at 50% 35%, rgba(43, 212, 200, 0.07), transparent),
+    var(--go-bg);
+  color: var(--go-text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Top nav ---------- */
+.go-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-bottom: 1px solid rgba(43, 212, 200, 0.35);
+  background: rgba(10, 14, 20, 0.7);
+}
+
+.go-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  color: var(--go-cyan);
+}
+
+.go-logo .bolt {
+  color: var(--go-pink);
+}
+
+.go-status-pill {
+  color: var(--go-pink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Centered card area ---------- */
+.go-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.go-card {
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--go-border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(43, 212, 200, 0.06), rgba(13, 22, 35, 0.7));
+  box-shadow: 0 0 50px rgba(43, 212, 200, 0.1);
+  padding: 38px 36px 32px;
+  text-align: center;
+  animation: goCardIn 0.4s ease both;
+}
+
+@keyframes goCardIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.go-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--go-text-dim);
+  margin-bottom: 14px;
+}
+
+.go-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.go-subtitle {
+  color: var(--go-text-dim);
+  font-size: 1rem;
+  margin: 0 0 28px;
+}
+
+/* ---------- Stat boxes ---------- */
+.go-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.go-stat-box {
+  border: 1px solid rgba(43, 212, 200, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px 10px;
+}
+
+.go-stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--go-text-dim);
+  margin-bottom: 8px;
+}
+
+.go-stat-value {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--go-text);
+}
+
+.go-stat-value.go-score {
+  color: var(--go-cyan);
+}
+
+.go-stat-value.go-rank {
+  color: var(--go-pink);
+}
+
+/* ---------- Message line ---------- */
+.go-message {
+  font-size: 0.95rem;
+  color: var(--go-text);
+  margin: 0 0 6px;
+}
+
+.go-save-status {
+  font-size: 0.78rem;
+  color: var(--go-text-dim);
+  margin: 0 0 26px;
+  min-height: 16px;
+  transition: color 0.3s ease;
+}
+
+/* ---------- Action buttons ---------- */
+.go-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.go-btn {
+  border-radius: 10px;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.go-btn:hover {
+  transform: translateY(-2px);
+}
+
+.go-btn-play-again {
+  background: var(--go-blue);
+  border-color: var(--go-blue);
+  color: #07101c;
+}
+
+.go-btn-play-again:hover {
+  box-shadow: 0 0 18px rgba(79, 179, 255, 0.45);
+}
+
+.go-btn-home {
+  background: transparent;
+  border-color: var(--go-green);
+  color: var(--go-green);
+}
+
+.go-btn-home:hover {
+  box-shadow: 0 0 18px rgba(52, 224, 161, 0.35);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 520px) {
+  .go-navbar { padding: 14px 20px; }
+  .go-card { padding: 28px 22px 26px; }
+  .go-title { font-size: 1.9rem; }
+  .go-stats { gap: 10px; }
+  .go-stat-value { font-size: 1.4rem; }
+  .go-actions { flex-direction: column; }
+  .go-btn { width: 100%; justify-content: center; }
+}
