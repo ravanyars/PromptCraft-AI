@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromptCraft AI — Leaderboard</title>
+  <link rel="stylesheet" href="../css/screen/leaderboard.css" />
+</head>
+<body class="leaderboard-page">
+
+  <nav class="lb-navbar">
+    <div class="lb-logo"><span class="bolt">⚡</span> PROMPTCRAFT AI</div>
+    <div class="lb-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../Game Screen/how-to-play.html">How to Play</a>
+      <a href="../Page/game.html">Play Game</a>
+    </div>
+  </nav>
+
+  <header class="lb-hero">
+    <h1>Leaderboard</h1>
+    <p>See how you stack up against the best prompt crafters</p>
+  </header>
+
+  <section class="lb-panel-wrap">
+    <div class="lb-panel">
+
+      <div class="lb-panel-header">
+        <h2>🏆 Top Scores</h2>
+        <span class="lb-count-pill" id="player-count">0 players</span>
+      </div>
+
+      <div class="lb-col-headers">
+        <span class="lb-col-rank">Rank</span>
+        <span class="lb-col-player">Player</span>
+        <span class="lb-col-score">Top Score</span>
+      </div>
+
+      <!-- Rows are injected live by leaderboard.js — nothing hardcoded here -->
+      <div id="leaderboard-list"></div>
+
+      <div class="lb-empty" id="leaderboard-empty">
+        <div class="lb-empty-icon">🎮</div>
+        <p>No scores yet. Play a round to claim the top spot!</p>
+      </div>
+
+      <div class="lb-actions">
+        <button class="lb-btn lb-btn-reset" id="reset-leaderboard-btn">Reset Leaderboard</button>
+        <a class="lb-btn lb-btn-play" href="../Page/game.html">Play Game →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../js/utilities/storage/leaderboard-storage.js"></script>
+  <script src="../js/utilities/leaderboard/leaderboard.js"></script>
+</body>
+</html>
