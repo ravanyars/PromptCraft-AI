@@ -1,0 +1,288 @@
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.1);
+
+    position:sticky;
+
+    top:0;
+
+    background:#050816;
+
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    font-size:1.5rem;
+}
+
+.logo-text{
+    color:var(--secondary);
+    font-weight:700;
+    font-size:1.2rem;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    transition:var(--transition);
+}
+
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+/* HERO */
+
+.hero-section{
+    min-height:85vh;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    align-items:center;
+
+    gap:50px;
+
+    padding:60px 8%;
+}
+
+.hero-left h1{
+    font-size:4rem;
+    line-height:1.2;
+}
+
+.hero-left p{
+    margin-top:20px;
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:30px;
+
+    display:flex;
+
+    gap:20px;
+}
+
+.preview-card{
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.preview-card img{
+    height:350px;
+    object-fit:cover;
+}
+
+.preview-content{
+    padding:20px;
+}
+
+.preview-content h3{
+    color:var(--secondary);
+}
+
+/* FEATURES */
+
+.features-section{
+    padding:80px 8%;
+}
+
+.features-section h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.features-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.feature-card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:16px;
+
+    padding:25px;
+
+    transition:var(--transition);
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+}
+
+.feature-card h3{
+    color:var(--secondary);
+    margin-bottom:15px;
+}
+
+.feature-card p{
+    color:var(--text-secondary);
+}
+
+/* CTA */
+
+.cta-section{
+    text-align:center;
+
+    padding:80px 8%;
+}
+
+.cta-section h2{
+    margin-bottom:30px;
+}
+
+/* HOW TO PLAY */
+
+.instruction-page{
+    text-align:center;
+
+    padding:60px 8%;
+}
+
+.instruction-page h1{
+    font-size:3rem;
+    color:var(--secondary);
+}
+
+.subtitle{
+    color:var(--text-secondary);
+
+    margin-top:15px;
+}
+
+.instruction-grid{
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.instruction-card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:16px;
+
+    padding:30px;
+
+    transition:var(--transition);
+}
+
+.instruction-card:hover{
+    transform:translateY(-5px);
+}
+
+.step-number{
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+}
+
+.instruction-card h3{
+    color:var(--secondary);
+    margin-bottom:15px;
+}
+
+.instruction-card p{
+    color:var(--text-secondary);
+}
+
+.rules-section{
+    width:90%;
+
+    max-width:1000px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.rule-card{
+    background:rgba(255,255,255,0.04);
+
+    border-radius:16px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.rule-card h2{
+    color:var(--secondary);
+    margin-bottom:20px;
+}
+
+.rule-card li{
+    margin-bottom:10px;
+}
+
+.back-section{
+    text-align:center;
+
+    padding-bottom:60px;
+}

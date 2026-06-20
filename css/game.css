@@ -1,0 +1,304 @@
+.game-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 5%;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+    background:#050816;
+}
+
+.game-logo{
+    color:#00D9FF;
+    font-weight:700;
+    font-size:1.3rem;
+}
+
+.game-stats{
+    display:flex;
+    gap:20px;
+}
+
+.stat-box{
+    background:#111827;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    min-width:110px;
+}
+
+.stat-box span{
+    display:block;
+
+    font-size:.8rem;
+
+    color:#9CA3AF;
+}
+
+.stat-box strong{
+    font-size:1rem;
+}
+
+.difficulty{
+    padding:4px 10px;
+
+    border-radius:8px;
+}
+
+.easy{
+    color:#22C55E;
+}
+
+.medium{
+    color:#F59E0B;
+}
+
+.hard{
+    color:#EF4444;
+}
+
+.game-layout{
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr;
+
+    gap:30px;
+
+    padding:40px 5%;
+}
+
+.image-card{
+    background:#111827;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    margin-bottom:25px;
+}
+
+.image-card img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.prompt-card{
+    background:#111827;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+}
+
+.prompt-card label{
+    display:block;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+.prompt-card textarea{
+    width:100%;
+
+    height:140px;
+
+    resize:none;
+
+    padding:15px;
+
+    background:#0F172A;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    border-radius:12px;
+
+    font-family:'Poppins';
+}
+
+.prompt-card textarea:focus{
+    outline:none;
+
+    border-color:#00D9FF;
+}
+
+.input-footer{
+    margin-top:10px;
+
+    text-align:right;
+
+    color:#9CA3AF;
+}
+
+.action-buttons{
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.analysis-panel{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.analysis-card{
+    background:#111827;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+}
+
+.analysis-card h3{
+    margin-bottom:15px;
+
+    color:#00D9FF;
+}
+
+.similarity-circle{
+    width:160px;
+    height:160px;
+
+    border-radius:50%;
+
+    border:6px solid #6C63FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-size:2rem;
+
+    font-weight:bold;
+}
+
+.analysis-card ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.analysis-card li{
+    padding:8px 12px;
+
+    border-radius:20px;
+
+    background:#1F2937;
+}
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+}
+
+.hidden{
+    display:none;
+}
+
+.modal-content{
+    width:90%;
+    max-width:500px;
+
+    background:#111827;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+}
+
+.modal-content h2{
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    margin-bottom:20px;
+}
+
+#earnedPoints{
+    color:#22C55E;
+    margin-bottom:20px;
+}
+
+#hintText{
+    color:#B3B3B3;
+}
+
+#timer{
+    color:#22C55E;
+}
+
+.timer-warning{
+    color:#EF4444 !important;
+
+    animation:pulse .8s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+#confettiCanvas{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+}

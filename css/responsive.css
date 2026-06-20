@@ -1,0 +1,58 @@
+@media(max-width:992px){
+
+    .hero-section{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-left h1{
+        font-size:3rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .rules-section{
+        grid-template-columns:1fr;
+    }
+
+    .hero-left h1{
+        font-size:2.5rem;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-left h1{
+        font-size:2rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons button{
+        width:100%;
+    }
+
+    .instruction-page h1{
+        font-size:2rem;
+    }
+
+}

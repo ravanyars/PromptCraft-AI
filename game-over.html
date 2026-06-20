@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Game Over</title>
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<section
+class="hero-section"
+style="
+min-height:100vh;
+grid-template-columns:1fr;
+text-align:center;
+">
+
+<div>
+
+<h1>
+
+Game Over
+
+</h1>
+
+<br>
+
+<div class="glass-card"
+style="
+padding:40px;
+max-width:600px;
+margin:auto;
+">
+
+<h2>
+
+Final Statistics
+
+</h2>
+
+<br>
+
+<p>
+
+Final Score:
+<strong id="finalScore">
+0
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Accuracy:
+<strong id="accuracy">
+0%
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Levels Completed:
+<strong id="completedLevels">
+0
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Rank:
+<strong id="playerRank">
+-
+</strong>
+
+</p>
+
+<br>
+
+<button
+id="saveScoreBtn"
+class="primary-btn">
+
+Save Score
+
+</button>
+
+<br><br>
+
+<button
+onclick="
+window.location.href='game.html'
+"
+class="secondary-btn">
+
+Play Again
+
+</button>
+
+<br><br>
+
+<button
+onclick="
+window.location.href='leaderboard.html'
+"
+class="secondary-btn">
+
+Leaderboard
+
+</button>
+
+<br><br>
+
+<button
+onclick="
+window.location.href='index.html'
+"
+class="secondary-btn">
+
+Home
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/storage/local-storage.js"></script>
+
+<script>
+
+const finalScore =
+localStorage.getItem(
+"finalScore"
+) || 0;
+
+const accuracy =
+localStorage.getItem(
+"accuracy"
+) || 0;
+
+const completedLevels =
+localStorage.getItem(
+"levelsCompleted"
+) || 0;
+
+document.getElementById(
+"finalScore"
+).textContent =
+finalScore;
+
+document.getElementById(
+"accuracy"
+).textContent =
+accuracy + "%";
+
+document.getElementById(
+"completedLevels"
+).textContent =
+completedLevels;
+
+document.getElementById(
+"saveScoreBtn"
+).addEventListener(
+"click",
+() => {
+
+    const playerName =
+        prompt(
+            "Enter Your Name"
+        );
+
+    if(!playerName){
+
+        return;
+
+    }
+
+    StorageManager.saveScore({
+
+        playerName,
+
+        score:Number(
+            finalScore
+        ),
+
+        completedLevels:Number(
+            completedLevels
+        ),
+
+        date:
+        new Date()
+        .toLocaleDateString()
+
+    });
+
+    const scores =
+        StorageManager.getScores();
+
+    const rank =
+        scores.findIndex(
+            score =>
+            score.playerName ===
+            playerName &&
+            score.score ===
+            Number(finalScore)
+        ) + 1;
+
+    document.getElementById(
+        "playerRank"
+    ).textContent =
+        "#" + rank;
+
+    alert(
+        "Score Saved!"
+    );
+
+}
+);
+
+</script>
+
+</body>
+
+</html>
