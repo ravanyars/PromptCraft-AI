@@ -1,0 +1,62 @@
+[
+  {
+    "id": 11,
+    "image": "assets/images/levels/medium/level11.jpg",
+    "prompt": "A robot dog walking through a futuristic city",
+    "hints": ["Robot", "Dog", "Robot dog in city"]
+  },
+  {
+    "id": 12,
+    "image": "assets/images/levels/medium/level12.jpg",
+    "prompt": "A steampunk owl wearing goggles",
+    "hints": ["Bird", "Goggles", "Steampunk owl"]
+  },
+  {
+    "id": 13,
+    "image": "assets/images/levels/medium/level13.jpg",
+    "prompt": "A flying car above skyscrapers at sunset",
+    "hints": ["Vehicle", "Flying Car", "Flying car at sunset"]
+  },
+  {
+    "id": 14,
+    "image": "assets/images/levels/medium/level14.jpg",
+    "prompt": "A pirate ship sailing through stormy seas",
+    "hints": ["Ocean", "Pirate Ship", "Ship in storm"]
+  },
+  {
+    "id": 15,
+    "image": "assets/images/levels/medium/level15.jpg",
+    "prompt": "A magician performing tricks inside a glowing castle",
+    "hints": ["Magic", "Castle", "Magician in castle"]
+  },
+  {
+    "id": 16,
+    "image": "assets/images/levels/medium/level16.jpg",
+    "prompt": "A giant robot protecting a city from monsters",
+    "hints": ["Robot", "Monsters", "Robot protecting city"]
+  },
+  {
+    "id": 17,
+    "image": "assets/images/levels/medium/level17.jpg",
+    "prompt": "An astronaut riding a motorcycle on the moon",
+    "hints": ["Space", "Motorcycle", "Astronaut on moon"]
+  },
+  {
+    "id": 18,
+    "image": "assets/images/levels/medium/level18.jpg",
+    "prompt": "A dragon flying over snowy mountains",
+    "hints": ["Dragon", "Snow", "Flying dragon"]
+  },
+  {
+    "id": 19,
+    "image": "assets/images/levels/medium/level19.jpg",
+    "prompt": "A futuristic train travelling through a neon city",
+    "hints": ["Train", "Neon", "Futuristic train"]
+  },
+  {
+    "id": 20,
+    "image": "assets/images/levels/medium/level20.jpg",
+    "prompt": "A treasure chest hidden inside an ancient temple",
+    "hints": ["Treasure", "Temple", "Hidden treasure chest"]
+  }
+]

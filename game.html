@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        PromptCraft AI - Game
+    </title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="game-header">
+
+        <div class="game-logo">
+
+            ⚡ PROMPTCRAFT AI
+
+        </div>
+
+        <div class="game-stats">
+
+            <div class="stat-box">
+
+                <span>Level</span>
+
+                <strong id="currentLevel">
+                    Easy 1
+                </strong>
+
+            </div>
+
+            <div class="stat-box">
+
+                <span>Difficulty</span>
+
+                <strong
+                    id="difficultyBadge"
+                    class="difficulty easy">
+
+                    EASY
+
+                </strong>
+
+            </div>
+
+            <div class="stat-box">
+
+                <span>Timer</span>
+
+                <strong id="timer">
+
+                    60
+
+                </strong>
+
+            </div>
+
+            <div class="stat-box">
+
+                <span>Score</span>
+
+                <strong id="totalScore">
+
+                    0
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- GAME AREA -->
+
+    <main class="game-layout">
+
+        <!-- LEFT SIDE -->
+
+        <section class="game-main">
+
+            <div class="image-card">
+
+                <img
+                    id="levelImage"
+                    src="assets/images/levels/easy/level1.jpg"
+                    alt="AI Generated Image">
+
+            </div>
+
+            <div class="prompt-card">
+
+                <label>
+
+                    Enter Your Prompt Guess
+
+                </label>
+
+                <textarea
+                    id="promptInput"
+                    maxlength="250"
+                    placeholder="Example: A futuristic cat sitting on a giant donut in space">
+                </textarea>
+
+                <div class="input-footer">
+
+                    <span id="charCount">
+
+                        0 / 250
+
+                    </span>
+
+                </div>
+
+                <div class="action-buttons">
+
+                    <button
+                        id="submitBtn"
+                        class="primary-btn">
+
+                        Submit Guess
+
+                    </button>
+
+                    <button
+                        id="hintBtn"
+                        class="secondary-btn">
+
+                        Get Hint
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RIGHT SIDE -->
+
+        <aside class="analysis-panel">
+
+            <div class="analysis-card">
+
+                <h3>
+                    Similarity Score
+                </h3>
+
+                <div class="similarity-circle">
+
+                    <span id="similarityScore">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="analysis-card">
+
+                <h3>
+                    Matched Keywords
+                </h3>
+
+                <ul id="matchedWords">
+
+                </ul>
+
+            </div>
+
+            <div class="analysis-card">
+
+                <h3>
+                    Missing Keywords
+                </h3>
+
+                <ul id="missingWords">
+
+                </ul>
+
+            </div>
+
+            <div class="analysis-card">
+
+                <h3>
+                    Hint Area
+                </h3>
+
+                <p id="hintText">
+
+                    No hints used yet.
+
+                </p>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- LEVEL COMPLETE MODAL -->
+
+    <div
+        id="levelCompleteModal"
+        class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>
+
+                🎉 Level Cleared
+
+            </h2>
+
+            <p>
+
+                Excellent Work!
+
+            </p>
+
+            <h3 id="earnedPoints">
+
+                +100 Points
+
+            </h3>
+
+            <button
+                id="nextLevelBtn"
+                class="primary-btn">
+
+                Next Level
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- GAME OVER MODAL -->
+
+    <div
+        id="timeUpModal"
+        class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>
+
+                ⏰ Time Up
+
+            </h2>
+
+            <p>
+
+                Original Prompt:
+
+            </p>
+
+            <p
+                id="originalPrompt">
+
+            </p>
+
+            <button
+                id="gameOverBtn"
+                class="primary-btn">
+
+                Game Over
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- CONFETTI -->
+
+    <canvas id="confettiCanvas"></canvas>
+<script src="js/ui/notifications.js"></script>
+<script src="js/ui/modal.js"></script>
+<script src="js/ui/animations.js"></script>
+<script src="js/game/timer.js"></script>
+<script src="js/game/prompt-matcher.js"></script>
+<script src="js/game/score-engine.js"></script>
+<script src="js/game/hint-engine.js"></script>
+<script src="js/game/level-manager.js"></script>
+
+<script src="js/game/game-controller.js"></script>
+
+</body>
+
+</html>

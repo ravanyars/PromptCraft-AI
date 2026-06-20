@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Leaderboard</title>
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+
+⚡ PROMPTCRAFT AI
+
+</div>
+
+<nav>
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="game.html">
+Game
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section
+class="instruction-page">
+
+<h1>
+
+Leaderboard
+
+</h1>
+
+<p class="subtitle">
+
+Top Prompt Engineers
+
+</p>
+
+</section>
+
+<section
+style="
+width:90%;
+max-width:900px;
+margin:auto;
+">
+
+<table
+id="leaderboardTable"
+style="
+width:100%;
+border-collapse:collapse;
+">
+
+<thead>
+
+<tr>
+
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Levels</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+<div
+style="
+text-align:center;
+margin-top:30px;
+">
+
+<button
+id="resetLeaderboard"
+class="secondary-btn">
+
+Reset Leaderboard
+
+</button>
+
+</div>
+
+</section>
+
+<script src="js/storage/local-storage.js"></script>
+
+<script src="js/leaderboard/leaderboard.js"></script>
+
+</body>
+
+</html>
