@@ -1,4 +1,4 @@
-// Hidden AI Prompt
+//  image
 const images = [
 {
     image:"https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500",
@@ -26,7 +26,6 @@ const images = [
 }
 ];
 
-let originalPrompt = "";
 
 
 
