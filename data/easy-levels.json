@@ -16,47 +16,6 @@
     "image": "assets/images/levels/easy/level3.png",
     "prompt": "A blue sports car parked near a beach",
     "hints": ["Vehicle", "Blue Car", "Sports car near beach"]
-  },
-  {
-    "id": 4,
-    "image": "assets/images/levels/easy/level4.png",
-    "prompt": "A panda eating bamboo in a forest",
-    "hints": ["Animal", "Bamboo", "Panda eating bamboo"]
-  },
-  {
-    "id": 5,
-    "image": "assets/images/levels/easy/level5.png",
-    "prompt": "A red bicycle beside a small lake",
-    "hints": ["Transport", "Bicycle", "Red bicycle near lake"]
-  },
-  {
-    "id": 6,
-    "image": "assets/images/levels/easy/level6.png",
-    "prompt": "A white rabbit holding a carrot",
-    "hints": ["Animal", "Carrot", "White rabbit"]
-  },
-  {
-    "id": 7,
-    "image": "assets/images/levels/easy/level7.png",
-    "prompt": "A brown horse running through a field",
-    "hints": ["Animal", "Horse", "Running horse"]
-  },
-  {
-    "id": 8,
-    "image": "assets/images/levels/easy/level8.png",
-    "prompt": "A yellow duck swimming in a pond",
-    "hints": ["Bird", "Duck", "Yellow duck swimming"]
-  },
-  {
-    "id": 9,
-    "image": "assets/images/levels/easy/level9.png",
-    "prompt": "A child flying a colorful kite in the sky",
-    "hints": ["Child", "Kite", "Flying colorful kite"]
-  },
-  {
-    "id": 10,
-    "image": "assets/images/levels/easy/level10.png",
-    "prompt": "A giant birthday cake with candles",
-    "hints": ["Celebration", "Cake", "Birthday cake"]
   }
 ]
+ 

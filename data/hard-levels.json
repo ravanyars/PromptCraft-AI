@@ -1,62 +1,20 @@
 [
   {
     "id": 21,
-    "image": "assets/images/levels/hard/level21.jpg",
+    "image": "assets/images/levels/hard/level21.png",
     "prompt": "A neon cyberpunk cat wearing sunglasses sitting on a giant glazed donut in outer space",
     "hints": ["Cyberpunk", "Cat", "Cyberpunk cat in space"]
   },
   {
     "id": 22,
-    "image": "assets/images/levels/hard/level22.jpg",
+    "image": "assets/images/levels/hard/level22.png",
     "prompt": "A steampunk elephant piloting a rocket through a candy galaxy",
     "hints": ["Elephant", "Rocket", "Steampunk elephant"]
   },
   {
     "id": 23,
-    "image": "assets/images/levels/hard/level23.jpg",
+    "image": "assets/images/levels/hard/level23.png",
     "prompt": "A cybernetic samurai fighting shadow dragons under a purple moon",
     "hints": ["Samurai", "Dragons", "Cybernetic samurai"]
-  },
-  {
-    "id": 24,
-    "image": "assets/images/levels/hard/level24.jpg",
-    "prompt": "A floating crystal castle above lava waterfalls",
-    "hints": ["Castle", "Crystal", "Floating crystal castle"]
-  },
-  {
-    "id": 25,
-    "image": "assets/images/levels/hard/level25.jpg",
-    "prompt": "A robotic phoenix rising from digital flames",
-    "hints": ["Phoenix", "Robot", "Robotic phoenix"]
-  },
-  {
-    "id": 26,
-    "image": "assets/images/levels/hard/level26.jpg",
-    "prompt": "A futuristic astronaut surfing on Saturn rings",
-    "hints": ["Astronaut", "Saturn", "Astronaut surfing"]
-  },
-  {
-    "id": 27,
-    "image": "assets/images/levels/hard/level27.jpg",
-    "prompt": "A giant whale flying through a neon galaxy filled with floating clocks",
-    "hints": ["Whale", "Galaxy", "Flying whale"]
-  },
-  {
-    "id": 28,
-    "image": "assets/images/levels/hard/level28.jpg",
-    "prompt": "A wizard coding on a holographic computer inside an enchanted forest",
-    "hints": ["Wizard", "Computer", "Wizard coding"]
-  },
-  {
-    "id": 29,
-    "image": "assets/images/levels/hard/level29.jpg",
-    "prompt": "A time traveller riding a mechanical tiger through multiple dimensions",
-    "hints": ["Time Travel", "Tiger", "Mechanical tiger"]
-  },
-  {
-    "id": 30,
-    "image": "assets/images/levels/hard/level30.jpg",
-    "prompt": "A cyberpunk astronaut riding a dragon through a glowing multiverse",
-    "hints": ["Astronaut", "Dragon", "Cyberpunk astronaut"]
   }
 ]
