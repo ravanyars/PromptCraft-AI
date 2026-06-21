@@ -1,91 +1,87 @@
-//  image
-const images = [
-{
-    image:"https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500",
-    prompt:"cute white cat sitting"
-},
-{
-    image:"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500",
-    prompt:"brown dog running park"
-},
-{
-    image:"https://images.unsplash.com/photo-1444464666168-49d633b86797?w=500",
-    prompt:"small bird sitting tree"
-},
-{
-    image:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500",
-    prompt:"green insect leaf"
-},
-{
-    image:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500",
-    prompt:"bright sun blue sky"
-},
-{
-    image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500",
-    prompt:"young human smiling"
-}
-];
+class PromptMatcher {
 
+    constructor() {
 
+        this.stopWords = [
 
+            "a",
+            "an",
+            "the",
+            "is",
+            "are",
+            "was",
+            "were",
+            "on",
+            "in",
+            "at",
+            "to",
+            "of",
+            "for",
+            "with",
+            "and"
 
-function generateImage(){
+        ];
 
-    const randomIndex =Math.floor(Math.random() * images.length);
+    }
 
-    const selected =images[randomIndex];
+    cleanText(text) {
 
-    document.querySelector(".image-box img").src = selected.image;
+        return text
+            .toLowerCase()
+            .replace(/[^\w\s]/g, "")
+            .split(" ")
+            .filter(
+                word =>
+                    word.trim() !== "" &&
+                    !this.stopWords.includes(word)
+            );
 
-    originalPrompt = selected.prompt;
+    }
 
-    document.getElementById("userPrompt").value = "";
+    compare(originalPrompt, userPrompt) {
 
-    document.getElementById("matchedWords").innerText = "0";
+        const originalWords =
+            this.cleanText(originalPrompt);
 
-    document.getElementById("matchedList").innerText = "-";
-}
+        const userWords =
+            this.cleanText(userPrompt);
 
-// Prompt Matching
+        const matchedWords = [];
 
-let attempts = 0;
+        const missingWords = [];
 
+        originalWords.forEach(word => {
 
+            if (userWords.includes(word)) {
 
-function checkPrompt(){
+                matchedWords.push(word);
 
-    attempts++;
+            } else {
 
-    document.getElementById("attempts").innerText = attempts;
+                missingWords.push(word);
 
-    const userPrompt =document.getElementById("userPrompt").value.toLowerCase();
+            }
 
-    const originalWords =originalPrompt.split(" ");
+        });
 
-    const userWords =userPrompt.split(" ");
+        const similarity =
+            Math.round(
+                (
+                    matchedWords.length /
+                    originalWords.length
+                ) * 100
+            );
 
-    let matched = [];
+        return {
 
-  
+            matchedWords,
 
-    originalWords.forEach(word => {
+            missingWords,
 
-        if(userWords.includes(word)){
-            matched.push(word);
-        }
+            similarity
 
-    });
+        };
 
-    const score =Math.round((matched.length /originalWords.length) * 100);
-
-    document.getElementById("score").innerText = score;
-
-    document.getElementById("currentScore").innerText = score + "%";
-
-    document.getElementById("matchedWords").innerText = matched.length;
-
-    document.getElementById("matchedList").innerText =matched.length > 0 ? matched.join(", ") : "No Match";
+    }
 
 }
-
-generateImage();
