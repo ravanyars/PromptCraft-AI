@@ -1,66 +1,42 @@
-const images = [
-{
-    image:"https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500",
-    prompt:"cute white cat sitting"
-},
-{
-    image:"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500",
-    prompt:"brown dog running park"
-},
-{
-    image:"https://images.unsplash.com/photo-1444464666168-49d633b86797?w=500",
-    prompt:"small bird sitting tree"
-},
-{
-    image:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500",
-    prompt:"green insect leaf"
-},
-{
-    image:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500",
-    prompt:"bright sun blue sky"
-},
-{
-    image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500",
-    prompt:"young human smiling"
-}
-];
+class ScoreEngine {
 
+    calculatePoints(
+        similarity,
+        timerPercentage
+    ) {
 
+        let points = 0;
 
+        if (similarity >= 90) {
 
+            points = 100;
 
-function checkPrompt(){
+        } else if (similarity >= 70) {
 
-    attempts++;
+            points = 75;
 
-    document.getElementById("attempts").innerText = attempts;
+        } else if (similarity >= 50) {
 
-    const userPrompt =document.getElementById("userPrompt").value.toLowerCase();
+            points = 50;
 
-    const originalWords =originalPrompt.split(" ");
+        } else if (similarity >= 30) {
 
-    const userWords =userPrompt.split(" ");
+            points = 25;
 
-    let matched = [];
+        } else {
 
-  
+            points = 10;
 
-    originalWords.forEach(word => {
-
-        if(userWords.includes(word)){
-            matched.push(word);
         }
 
-    });
+        if (timerPercentage > 50) {
 
-    const score =Math.round((matched.length /originalWords.length) * 100);
+            points += 20;
 
-    document.getElementById("score").innerText = score;
+        }
 
-    document.getElementById("currentScore").innerText = score + "%";
+        return points;
 
-    document.getElementById("matchedWords").innerText = matched.length;
-
-    document.getElementById("matchedList").innerText =matched.length > 0 ? matched.join(", ") : "No Match";
+    }
 
 }
